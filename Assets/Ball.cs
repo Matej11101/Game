@@ -25,7 +25,7 @@ public class Ball : MonoBehaviour
     {
         if (!inPlay)
         {
-            transform.position = paddle.position;
+        transform.position = paddle.position;
         }
 
         if (Input.GetButtonDown("Jump") && !inPlay)
