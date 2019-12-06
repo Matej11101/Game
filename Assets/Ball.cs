@@ -9,6 +9,7 @@ public class Ball : MonoBehaviour
     public Transform paddle;
     public float speed;
     public Transform explosion;
+    public GameManager gm;
 
 
     // Start is called before the first frame update
@@ -43,6 +44,7 @@ public class Ball : MonoBehaviour
             Debug.Log("Ball hit the Bottom");
             rb.velocity = Vector2.zero;
             inPlay = false;
+            gm.UpdateLives(-1);
         }
     }
 
