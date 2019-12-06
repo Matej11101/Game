@@ -54,7 +54,11 @@ public class Ball : MonoBehaviour
         {
             Transform newExplosion = Instantiate(explosion, other.transform.position, other.transform.rotation);
             Destroy(newExplosion.gameObject, 2.5f);
+
+            gm.UpdateScore(other.gameObject.GetComponent<Bricks>().points);
+
             Destroy(other.gameObject);
+            
         }
     }
 }

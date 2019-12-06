@@ -31,4 +31,13 @@ public class GameManager : MonoBehaviour
 
         livesText.text = "Lives: " + lives;
     }
+
+    public void UpdateScore(int points)
+    {
+        score += points;
+
+
+        scoreText.text = "Score: " + score;
+    }
+
 }

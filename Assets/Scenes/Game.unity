@@ -179,7 +179,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 40
+    m_FontSize: 35
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
@@ -458,7 +458,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 40
+    m_FontSize: 35
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
@@ -2123,7 +2123,7 @@ MonoBehaviour:
   speed: 400
   explosion: {fileID: 2105121730282582860, guid: 637eac1e2f00c0a448d0686626054b9a,
     type: 3}
-  gm: {fileID: 0}
+  gm: {fileID: 1016766186}
 --- !u!212 &1129998119
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3350,6 +3350,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1580380555}
     m_Modifications:
+    - target: {fileID: 3180153130436613329, guid: 785a54750e733ae499b5e8a7d01428c8,
+        type: 3}
+      propertyPath: points
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1504719942488837874, guid: 785a54750e733ae499b5e8a7d01428c8,
         type: 3}
       propertyPath: m_Name
