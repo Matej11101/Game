@@ -17,5 +17,10 @@ public class PowrUP : MonoBehaviour
     void Update()
     {
         transform.Translate(new Vector2(0f, -1f)* Time.deltaTime * speed);
+
+        if (transform.position.y < -6)
+        {
+            Destroy(gameObject);
+        }
     }
 }

@@ -38,4 +38,12 @@ public class Paddle : MonoBehaviour
         }
 
     }
+     void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("ExtraLive"))
+        { 
+            gm.UpdateLives(1);
+            Destroy(other.gameObject);
+        }
+    }
 }

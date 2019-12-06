@@ -10,6 +10,7 @@ public class Ball : MonoBehaviour
     public float speed;
     public Transform explosion;
     public GameManager gm;
+    public Transform PowerUP;
 
 
     // Start is called before the first frame update
@@ -57,6 +58,13 @@ public class Ball : MonoBehaviour
     {
         if (other.transform.CompareTag("Brick"))
         {
+
+            int randomchance = Random.Range(1, 101);
+            if (randomchance < 50)
+            {
+                Instantiate(PowerUP, other.transform.position, other.transform.rotation);
+            }
+
             Transform newExplosion = Instantiate(explosion, other.transform.position, other.transform.rotation);
             Destroy(newExplosion.gameObject, 2.5f);
 
