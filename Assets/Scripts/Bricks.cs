@@ -5,4 +5,6 @@ using UnityEngine;
 public class Bricks : MonoBehaviour
 {
     public int points;
+    public int HitsToBreak;
+    public Sprite HitSprite;
 }
