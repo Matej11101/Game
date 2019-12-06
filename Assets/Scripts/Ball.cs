@@ -61,6 +61,7 @@ public class Ball : MonoBehaviour
             Destroy(newExplosion.gameObject, 2.5f);
 
             gm.UpdateScore(other.gameObject.GetComponent<Bricks>().points);
+            gm.UpdateNumberOfBricks();
 
             Destroy(other.gameObject);
             

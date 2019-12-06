@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -11,12 +12,14 @@ public class GameManager : MonoBehaviour
     public Text scoreText;
     public bool gameOver;
     public GameObject gameOverPanel;
+    public int numberofbricks;
 
     // Start is called before the first frame update
     void Start()
     {
         livesText.text = "Lives: " + lives;
         scoreText.text = "Score: " + score;
+        numberofbricks = GameObject.FindGameObjectsWithTag("Brick").Length;
     }
 
     // Update is called once per frame
@@ -48,11 +51,30 @@ public class GameManager : MonoBehaviour
         scoreText.text = "Score: " + score;
     }
 
+    public void UpdateNumberOfBricks()
+    {
+        numberofbricks--;
+
+        if(numberofbricks <= 0)
+        {
+            GameOver();
+        }
+    }
+
     void GameOver()
     {
         gameOver = true;
         gameOverPanel.SetActive(true);
 
+    }
+    public void PlayAgain()
+    {
+        SceneManager.LoadScene("Game");
+    }
+    public void Quit()
+    {
+        Application.Quit();
+        Debug.Log("Game QUit");
     }
 
 }
