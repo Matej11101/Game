@@ -58,21 +58,29 @@ public class Ball : MonoBehaviour
     {
         if (other.transform.CompareTag("Brick"))
         {
+            Bricks bricks = other.gameObject.GetComponent<Bricks>();
 
-            int randomchance = Random.Range(1, 101);
-            if (randomchance < 50)
+
+            if (bricks.HitsToBreak > 1)
             {
-                Instantiate(PowerUP, other.transform.position, other.transform.rotation);
+                bricks.BreakBrick();
             }
+            else
+            {
+                int randomchance = Random.Range(1, 101);
+                if (randomchance < 50)
+                {
+                    Instantiate(PowerUP, other.transform.position, other.transform.rotation);
+                }
 
-            Transform newExplosion = Instantiate(explosion, other.transform.position, other.transform.rotation);
-            Destroy(newExplosion.gameObject, 2.5f);
+                Transform newExplosion = Instantiate(explosion, other.transform.position, other.transform.rotation);
+                Destroy(newExplosion.gameObject, 2.5f);
 
-            gm.UpdateScore(other.gameObject.GetComponent<Bricks>().points);
-            gm.UpdateNumberOfBricks();
+                gm.UpdateScore(bricks.points);
+                gm.UpdateNumberOfBricks();
 
-            Destroy(other.gameObject);
-            
+                Destroy(other.gameObject);
+            }
         }
     }
 }
