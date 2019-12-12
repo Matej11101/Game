@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public int score;
     public Text livesText;
     public Text scoreText;
+    public Text hightscoreText;
     public bool gameOver;
     public GameObject gameOverPanel;
     public GameObject loadLevelPanel;
@@ -88,6 +89,17 @@ public class GameManager : MonoBehaviour
     {
         gameOver = true;
         gameOverPanel.SetActive(true);
+        int highScore = PlayerPrefs.GetInt("HIGHSCORE");
+        if (score > highScore)
+        {
+            PlayerPrefs.SetInt("HIGHSCORE", score);
+
+            hightscoreText.text = "New Hight Score: " + score;
+        }
+        else
+        {
+            hightscoreText.text = "Hight Score: " + highScore + "\n" + "Can you beat it?";
+        }
 
     }
     public void PlayAgain()
