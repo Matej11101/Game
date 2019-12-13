@@ -70,7 +70,7 @@ public class Ball : MonoBehaviour
             else
             {
                 int randomchance = Random.Range(1, 101);
-                if (randomchance < 50)
+                if (randomchance < 10)
                 {
                     Instantiate(PowerUP, other.transform.position, other.transform.rotation);
                 }
@@ -85,6 +85,17 @@ public class Ball : MonoBehaviour
             }
 
             audio.Play();
+            
+        }
+        if (other.transform.CompareTag("Wall"))
+        {
+            audio.Play();
+        }
+        if (other.transform.CompareTag("paddle"))
+        {
+            audio.Play();
         }
     }
+
+    
 }

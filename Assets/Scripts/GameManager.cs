@@ -11,12 +11,14 @@ public class GameManager : MonoBehaviour
     public Text livesText;
     public Text scoreText;
     public Text hightscoreText;
+    public InputField highScoreInput;
     public bool gameOver;
     public GameObject gameOverPanel;
     public GameObject loadLevelPanel;
     public int numberofbricks;
     public Transform[] levels;
     public int currentLevelIndex = 0;
+    public Ball ball;
 
     // Start is called before the first frame update
     void Start()
@@ -67,6 +69,7 @@ public class GameManager : MonoBehaviour
             }
             else
             {
+                
                 loadLevelPanel.SetActive(true);
                 loadLevelPanel.GetComponentInChildren<Text>().text = "Level " + (currentLevelIndex + 2);
                 gameOver = true;
@@ -87,6 +90,7 @@ public class GameManager : MonoBehaviour
 
     void GameOver()
     {
+        
         gameOver = true;
         gameOverPanel.SetActive(true);
         int highScore = PlayerPrefs.GetInt("HIGHSCORE");
@@ -94,22 +98,33 @@ public class GameManager : MonoBehaviour
         {
             PlayerPrefs.SetInt("HIGHSCORE", score);
 
-            hightscoreText.text = "New Hight Score: " + score;
+            hightscoreText.text = "New Hight Score: " +"\n" + "Enter Your Name Below.";
+            highScoreInput.gameObject.SetActive(true);
         }
         else
         {
-            hightscoreText.text = "Hight Score: " + highScore + "\n" + "Can you beat it?";
+            hightscoreText.text = PlayerPrefs.GetString("HIGHSCORENAME") +"'s " + " Hight Score Was " + highScore + "\n" + "Can you beat it?";
         }
 
     }
+
+    public void NewHighScore()
+    {
+        string highScoreName = highScoreInput.text;
+        PlayerPrefs.SetString("HIGHSCORENAME", highScoreName);
+        highScoreInput.gameObject.SetActive(false);
+        hightscoreText.text = "Congratulations" + highScoreName + "\n" + "Your New High Score is " + score;
+
+
+    }
+
     public void PlayAgain()
     {
         SceneManager.LoadScene("Game");
     }
     public void Quit()
     {
-        Application.Quit();
-        Debug.Log("Game QUit");
+        SceneManager.LoadScene("Start Menu");
     }
 
 }
