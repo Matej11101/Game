@@ -214,7 +214,7 @@ GameObject:
   - component: {fileID: 52142759}
   m_Layer: 0
   m_Name: paddle
-  m_TagString: Untagged
+  m_TagString: paddle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -227,7 +227,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 52142754}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.07, y: -4.33, z: -1.1134889}
+  m_LocalPosition: {x: 0, y: -4.33, z: 0}
   m_LocalScale: {x: 10.3137, y: 2.0021, z: 1}
   m_Children:
   - {fileID: 973226772}
@@ -275,14 +275,14 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.01259437, y: 0.1351399}
-      - {x: -0.06355415, y: 0.051703524}
-      - {x: -0.06500623, y: -0.052414335}
+    - - {x: -0.011447042, y: 0.14636359}
+      - {x: -0.06963047, y: 0.044925008}
+      - {x: -0.06983099, y: -0.045635704}
       - {x: -0.048629697, y: -0.064171165}
-      - {x: 0.060006227, y: -0.057931628}
-      - {x: 0.061412252, y: -0.01728484}
-      - {x: 0.061274264, y: 0.04383634}
-      - {x: 0.009541482, y: 0.13644435}
+      - {x: 0.04991807, y: -0.06471014}
+      - {x: 0.0689217, y: -0.04759345}
+      - {x: 0.07009955, y: 0.04190789}
+      - {x: 0.009851545, y: 0.14653435}
 --- !u!212 &52142758
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1673,7 +1673,7 @@ GameObject:
   - component: {fileID: 896005045}
   m_Layer: 0
   m_Name: left wall
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1808,7 +1808,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 973226771}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.0058174995, y: 0.23, z: -7.6565723}
+  m_LocalPosition: {x: 0, y: 0.237, z: 0}
   m_LocalScale: {x: 0.09695841, y: 0.49947554, z: 1}
   m_Children: []
   m_Father: {fileID: 52142755}
@@ -1871,6 +1871,7 @@ MonoBehaviour:
   - {fileID: 600803831397188770, guid: d64a6bb3c67831e4790d82f0069a62bf, type: 3}
   - {fileID: 3846267655248474712, guid: b2ef8a05c5382f640be1b8460f543718, type: 3}
   currentLevelIndex: 0
+  ball: {fileID: 0}
 --- !u!1 &1062529705
 GameObject:
   m_ObjectHideFlags: 0
@@ -2042,7 +2043,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1129998116}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.01, y: -3.92, z: -4.013906}
+  m_LocalPosition: {x: -0.005817499, y: -3.839, z: -7.656572}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2177,7 +2178,7 @@ GameObject:
   - component: {fileID: 1273943237}
   m_Layer: 0
   m_Name: right wall
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2494,7 +2495,7 @@ GameObject:
   - component: {fileID: 2089377490}
   m_Layer: 0
   m_Name: top wall
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
